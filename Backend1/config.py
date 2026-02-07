@@ -9,7 +9,8 @@ import os
 from typing import Optional
 from pydantic_settings import BaseSettings
 from functools import lru_cache
-
+from dotenv import load_dotenv
+load_dotenv()
 
 class Settings(BaseSettings):
     """
@@ -18,9 +19,9 @@ class Settings(BaseSettings):
     """
     
     # API Keys
-    gemini_api_key: str = "AIzaSyDXe5-IQN_-kNjg5zvlQqd2W9S4lJaCyhg"
-    finnhub_api_key: str = "d608fjpr01qihi8os6lgd608fjpr01qihi8os6m0"
-    exchange_rate_api_key: str = "fee4608d54e91c215b983be7"
+    gemini_api_key: Optional[str] = os.getenv("GEMINI_API_KEY")
+    finnhub_api_key: Optional[str] = os.getenv("FINNHUB_API_KEY")
+    exchange_rate_api_key: Optional[str] = os.getenv("EXCHANGE_RATE_API_KEY")
     
     # Application Settings
     app_name: str = "Intelligent Investment Strategist API"
