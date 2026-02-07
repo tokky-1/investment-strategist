@@ -20,7 +20,7 @@ export default function ConceptLookup() {
     setLoading(true);
     try {
       const response = await fetch(   // here as well
-       `${process.env.REACT_APP_API_URL}/api/ai/explain-concept`,
+       `${import.meta.env.VITE_API_URL}/api/ai/explain-concept`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

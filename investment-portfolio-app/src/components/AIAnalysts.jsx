@@ -28,7 +28,7 @@ export default function AIAnalyst({ symbol = "AAPL" }) {
     try {
       // Endpoint updated to focus only on SEC filings // here
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/analysis/sec-filing`,
+        `${import.meta.env.VITE_API_URL}/api/analysis/sec-filing`,
         {
           method: "POST",
           body: formData,

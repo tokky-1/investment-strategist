@@ -48,7 +48,7 @@ useEffect(() => {
   
   // Fetch Live FX Rate on Load   // change here
   useEffect(() => {
-    fetch("`${process.env.REACT_APP_API_URL}/api/market/fx-rate`")
+    fetch("`${import.meta.env.VITE_API_URL}/api/market/fx-rate`")
       .then((res) => res.json())
       .then((data) => setFxRate(data.rate))
       .catch((err) => console.error("FX fetch failed", err));
