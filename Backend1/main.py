@@ -34,10 +34,10 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
      allow_origins=[
-        "http://localhost:3000",                    # Local dev
-        "https://your-app.vercel.app",              # Replace with YOUR Vercel URL
-        "https://your-app-git-main.vercel.app",     # Vercel preview URLs
-        "https://*.vercel.app"                      # All Vercel subdomains
+        "http://localhost:3000",
+        "http://localhost:5173",                           # Vite local dev
+        "https://investment-strategist.vercel.app",        # Your Vercel URL
+        "https://*.vercel.app",                       # All Vercel subdomains
     ],
     allow_credentials=True,
     allow_methods=["*"],
