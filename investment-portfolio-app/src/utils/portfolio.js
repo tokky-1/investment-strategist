@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8000";  //main one
+const API_BASE_URL = "https://investment-strategist-backend.onrender.com";  //main one
 
 export async function fetchPortfolio({ budget, risk, horizon }) {
   const horizonMap = {
