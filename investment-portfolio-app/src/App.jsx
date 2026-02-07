@@ -42,13 +42,12 @@ export default function App() {
   const [fxRate, setFxRate] = useState(null);
 
 useEffect(() => {
-  console.log("🔍 API URL:", process.env.REACT_APP_API_URL);
-  console.log("🔍 NODE_ENV:", process.env.NODE_ENV);
+  console.log("🔍 API URL:",  import.meta.env.VITE_API_URL);
 }, []);
   
   // Fetch Live FX Rate on Load   // change here
   useEffect(() => {
-    fetch("`${import.meta.env.VITE_API_URL}/api/market/fx-rate`")
+    fetch(`${import.meta.env.VITE_API_URL}/api/market/fx-rate`)
       .then((res) => res.json())
       .then((data) => setFxRate(data.rate))
       .catch((err) => console.error("FX fetch failed", err));
