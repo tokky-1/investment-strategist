@@ -41,6 +41,11 @@ export default function App() {
   const [reportData, setReportData] = useState("");
   const [fxRate, setFxRate] = useState(null);
 
+useEffect(() => {
+  console.log("🔍 API URL:", process.env.REACT_APP_API_URL);
+  console.log("🔍 NODE_ENV:", process.env.NODE_ENV);
+}, []);
+  
   // Fetch Live FX Rate on Load   // change here
   useEffect(() => {
     fetch("`${process.env.REACT_APP_API_URL}/api/market/fx-rate`")
