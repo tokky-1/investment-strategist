@@ -1,5 +1,3 @@
-const API_BASE_URL = "https://investment-strategist-backend.onrender.com";  //main one
-
 export async function fetchPortfolio({ budget, risk, horizon }) {
   const horizonMap = {
     "3m": "3_months",
@@ -11,7 +9,7 @@ export async function fetchPortfolio({ budget, risk, horizon }) {
   };
 
   try {
-    const response = await fetch(`${API_BASE_URL}/api/portfolio/build`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/portfolio/build`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
