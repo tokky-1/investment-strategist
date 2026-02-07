@@ -1,0 +1,251 @@
+{
+  "info": {
+    "name": "Intelligent Investment Strategist API",
+    "description": "Complete API collection for testing the Nigerian Investment Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health & Status",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/health",
+              "host": ["{{base_url}}"],
+              "path": ["health"]
+            }
+          }
+        },
+        {
+          "name": "Root Endpoint",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/",
+              "host": ["{{base_url}}"],
+              "path": [""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Portfolio Management",
+      "item": [
+        {
+          "name": "Build Portfolio",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"budget_ngn\": 50000,\n  \"risk_level\": \"medium\",\n  \"time_horizon\": \"1_year\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/portfolio/build",
+              "host": ["{{base_url}}"],
+              "path": ["api", "portfolio", "build"]
+            }
+          }
+        },
+        {
+          "name": "Calculate Projections",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"budget_ngn\": 50000,\n  \"risk_level\": \"medium\",\n  \"time_horizon\": \"1_year\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/portfolio/projections",
+              "host": ["{{base_url}}"],
+              "path": ["api", "portfolio", "projections"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Market Data",
+      "item": [
+        {
+          "name": "Get Stock Price",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"AAPL\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/market/stock-price",
+              "host": ["{{base_url}}"],
+              "path": ["api", "market", "stock-price"]
+            }
+          }
+        },
+        {
+          "name": "Get FX Rate",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/market/fx-rate",
+              "host": ["{{base_url}}"],
+              "path": ["api", "market", "fx-rate"]
+            }
+          }
+        },
+        {
+          "name": "Get Approved Assets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/market/approved-assets",
+              "host": ["{{base_url}}"],
+              "path": ["api", "market", "approved-assets"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AI Analysis",
+      "item": [
+        {
+          "name": "Analyze SEC Filing (PDF)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/path/to/sec-filing.pdf"
+                },
+                {
+                  "key": "symbol",
+                  "value": "AAPL",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/analysis/sec-filing",
+              "host": ["{{base_url}}"],
+              "path": ["api", "analysis", "sec-filing"]
+            }
+          }
+        },
+        {
+          "name": "Analyze Earnings Call (Audio)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/path/to/earnings-call.mp3"
+                },
+                {
+                  "key": "symbol",
+                  "value": "AAPL",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/api/analysis/earnings-call",
+              "host": ["{{base_url}}"],
+              "path": ["api", "analysis", "earnings-call"]
+            }
+          }
+        },
+        {
+          "name": "Explain Financial Concept",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"concept\": \"P/E Ratio\",\n  \"context\": \"Comparing tech stocks\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/ai/explain-concept",
+              "host": ["{{base_url}}"],
+              "path": ["api", "ai", "explain-concept"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Utilities",
+      "item": [
+        {
+          "name": "Get Risk Levels",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/utils/risk-levels",
+              "host": ["{{base_url}}"],
+              "path": ["api", "utils", "risk-levels"]
+            }
+          }
+        },
+        {
+          "name": "Get Time Horizons",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/utils/time-horizons",
+              "host": ["{{base_url}}"],
+              "path": ["api", "utils", "time-horizons"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ]
+}

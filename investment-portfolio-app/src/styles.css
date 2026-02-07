@@ -1,0 +1,203 @@
+/* Theme variables */
+:root {
+  --bg: #fafafa;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #1976d2;
+  --error-bg: #fff6f6;
+  --error-border: #ffd1d1;
+  --glass: rgba(255, 255, 255, 0.6);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg: #0b0f1a;
+  --text: #f2f8ff; /* higher contrast text */
+  --card-bg: #071022;
+  --muted: #9fb2c9;
+  --accent: #60a5fa;
+  --error-bg: #3b0b0b;
+  --error-border: #7f1d1d;
+  --glass: rgba(255, 255, 255, 0.04);
+  --table-header: #cfe6ff;
+}
+
+/* Ensure MUI text and table cells are highly visible in dark mode */
+[data-theme="dark"] .MuiTypography-root,
+[data-theme="dark"] .MuiTableCell-root,
+[data-theme="dark"] .MuiTableHead-root,
+[data-theme="dark"] .MuiCardContent-root,
+[data-theme="dark"] .MuiTableRow-root {
+  color: var(--text) !important;
+}
+
+/* Recharts: make labels, legends and tooltips readable */
+.recharts-layer text {
+  fill: var(--text) !important;
+}
+.recharts-legend-item text {
+  fill: var(--text) !important;
+}
+.recharts-tooltip-wrapper {
+  background: rgba(5, 10, 20, 0.95) !important;
+  color: var(--text) !important;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+/* Slightly bolder table header coloring */
+.MuiTableHead-root th,
+.MuiTableCell-head {
+  color: var(--table-header) !important;
+  font-weight: 600;
+}
+
+body {
+  font-family: Inter, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  transition:
+    background-color 240ms ease,
+    color 240ms ease;
+}
+
+#root {
+  padding: 16px;
+}
+
+.MuiPaper-root,
+.MuiCard-root {
+  background: var(--card-bg) !important;
+  color: var(--text) !important;
+  transition:
+    background-color 240ms ease,
+    color 240ms ease;
+}
+
+/* Table and typography */
+.MuiTableCell-root,
+.MuiTableHead-root,
+.MuiTableRow-root {
+  color: var(--text) !important;
+}
+
+/* Buttons, toggles */
+.MuiToggleButton-root,
+.MuiButton-root {
+  color: var(--text) !important;
+}
+
+/* Loading & error */
+.loading-box {
+  padding: 16px;
+  margin-bottom: 16px;
+  background: var(--card-bg);
+}
+
+.error-box {
+  padding: 16px;
+  margin-bottom: 16px;
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+}
+
+/* Footers & muted */
+.muted {
+  color: var(--muted);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Inputs: ensure text is visible and placeholders are readable */
+.MuiInputBase-input {
+  color: var(--text) !important;
+  caret-color: var(--accent) !important;
+}
+.MuiInputBase-input::placeholder {
+  color: var(--muted) !important;
+  opacity: 1;
+}
+.MuiFormLabel-root {
+  color: var(--muted) !important;
+}
+
+/* Outlined input focus state and borders */
+.MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+[data-theme="dark"] .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 6px rgba(96, 165, 250, 0.06);
+}
+
+/* Toggle (time horizon) selected state — clearer visual shade */
+.MuiToggleButton-root {
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+.MuiToggleButton-root:hover {
+  background: rgba(25, 118, 210, 0.04);
+}
+.MuiToggleButton-root.Mui-selected {
+  background: rgba(25, 118, 210, 0.12) !important;
+  color: var(--accent) !important;
+  border-color: rgba(25, 118, 210, 0.18) !important;
+}
+[data-theme="dark"] .MuiToggleButton-root.Mui-selected {
+  background: rgba(96, 165, 250, 0.12) !important;
+  color: #071022 !important;
+}
+
+/* Radio button visibility */
+.MuiRadio-root {
+  color: rgba(17, 24, 39, 0.6);
+}
+[data-theme="dark"] .MuiRadio-root {
+  color: rgba(255, 255, 255, 0.64);
+}
+.MuiRadio-root.Mui-checked {
+  color: var(--accent) !important;
+}
+
+/* Make form control labels more readable when active */
+.MuiFormControlLabel-label {
+  color: var(--text) !important;
+}
+
+/* Small helper: ensure icons and svg text also pick up theme color */
+svg {
+  color: inherit;
+}
+
+.MuiCard-root {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .MuiCard-root {
+  background: rgba(7, 16, 34, 0.8) !important;
+  backdrop-filter: blur(10px);
+}
+
+.MuiButton-contained {
+  border-radius: 12px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 10px 24px !important;
+  background: linear-gradient(45deg, #1976d2, #42a5f5) !important;
+}
+
+.MuiTableCell-head {
+  background-color: rgba(25, 118, 210, 0.05);
+  font-weight: bold !important;
+}

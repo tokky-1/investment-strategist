@@ -1,0 +1,61 @@
+Frontend Specification – Portfolio Experience & UI
+Purpose
+This document defines exactly what the frontend builds and displays.
+Frontend focuses on clarity, trust, and demo impact — not financial logic.
+1. Frontend Responsibilities
+Frontend is responsible for: - Collecting user inputs - Displaying portfolio results clearly - Visualizing
+allocations and risk - Making the product understandable in < 30 seconds
+Frontend does NOT: - Calculate prices - Perform FX math - Decide asset allocation
+2. User Input Components
+2.1 Budget Input
+• 
+• 
+• 
+Numeric input (₦)
+Example placeholder: 
+Validation: must be > 0
+50000
+2.2 Risk Selector
+Options: - Low Risk (Stable) - Medium Risk (Balanced) - High Risk (Aggressive)
+Displayed as: - Radio buttons or segmented control
+2.3 Time Horizon Selector
+Options: - 6 months - 1 year - 3 years
+Used for projection explanation only.
+1
+3. Portfolio Display (Core Screen)
+3.1 Portfolio Table (Mandatory)
+Columns: - Asset Symbol - Asset Type - Allocation % - Price (USD) - Amount (₦) - Estimated Shares
+This table is the main proof of intelligence.
+3.2 Allocation Visualization
+• 
+• 
+• 
+Pie or bar chart
+Shows % split clearly
+Matches table data exactly
+4. Risk & Projection Section
+4.1 Risk Summary Card
+Displays: - Risk level - FX exposure note - Short Gemini-generated explanation
+4.2 Projection Card
+Displays: - Time horizon - Estimated value range - Assumptions disclaimer
+Example text:
+"Over 1 year, this portfolio could fluctuate based on market conditions and FX rates."
+5. Loading & UX States (Demo-Critical)
+Mandatory loading messages: - "Analyzing your budget…" - "Fetching live US stock prices…" - "Gemini is
+building your portfolio…"
+These make the demo feel alive.
+6. Error States
+Frontend must handle: - API timeout - Invalid inputs - Empty portfolio response
+2
+Errors must be human-readable:
+"We couldn’t fetch prices right now. Please try again."
+7. Required Disclaimers (Always Visible)
+Footer or card text:
+"Educational simulation only. Not financial advice."
+8. Styling & Libraries
+Recommended: - UI: shadcn/ui or Material UI - Charts: Recharts - Animations: Framer Motion
+Priority: - Readability > Aesthetics
+9. Definition of Frontend Done
+✔ User understands where ₦50,000 goes ✔ Prices & percentages visible ✔ Risk clearly explained ✔ UI
+feels fast and intentional ✔ Demo-ready without explanation
+If the frontend follows this document, judges will immediately understand the product value
