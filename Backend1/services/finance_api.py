@@ -496,7 +496,6 @@ class FinanceAPIService:
         
         Args:
             portfolio: List of assets with symbols and allocation percentages
-        
         Returns:
             Dictionary with expected_return and volatility
         """
